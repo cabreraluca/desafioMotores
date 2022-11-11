@@ -1,0 +1,52 @@
+.lista{
+  display: grid;
+  max-width: 1rem;
+  width: auto;
+}
+.contenedorProducts{
+  display: flex;
+  margin: auto;
+}
+.contenedorProducts p{
+  text-align: center;
+  margin: 0rem 21rem 1rem 0rem;
+}
+.eachProduct img{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 10px;
+}
+.eachProduct div{
+  max-width: 80px;
+  justify-content: center;
+  margin: 10rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.contenedorProducts{
+  margin: 10rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.eachProduct{
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+ul{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+.product-img {
+  width: 150px;
+  height: 100px;
+  max-height: 100px;
+  max-width: 150px;
+}
+.footer{
+  display: flex;
+  justify-content: center;
+}
+
