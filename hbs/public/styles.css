@@ -3,6 +3,10 @@
   max-width: 1rem;
   width: auto;
 }
+.agregar{
+  width: max-content;
+  text-align: center;
+}
 .contenedorProducts{
   display: flex;
   margin: auto;

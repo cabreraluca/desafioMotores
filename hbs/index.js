@@ -2,7 +2,13 @@ const express = require('express');
 const app = express();
 const { engine } = require('express-handlebars');
 const PORT = 8080;
-const Contenedor = require('./desafio2')
+const { Router } = express;
+const routerProducts = Router();
+const Contenedor = require('./desafio2');
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended:false}));
+app.use(bodyParser.json());
+app.use("/api/products", routerProducts);
 const server = app.listen(PORT, () => {
   console.log(`Servidor http escuchando en el puerto ${server.address().port}`);
 });
@@ -25,19 +31,25 @@ app.get("/form", (req, res) => {
   res.sendFile(__dirname + "/index.html");
   res.render("form", {title: "Agregar productos"});
 });
-
+app.get("/", (req, res)=>{
+  res.render('bienvenido');
+});
 app.post("/form", (req, res) => {
   const { body } = req;
   console.log(body);
   contenedor.save(body);
-  res.send("Producto subido correctamente");
-  res.render("pages/gracias", {title: "Producto correctamente agregado"});
+  res.render('gracias');
 });
 
 app.get('/productos', async(req, res) => {
   const contenedor = new Contenedor;
   const productos = await contenedor.getAll();
-  res.render('productslist', { products: productos, productsExist: true });
+  if(productos != undefined){
+    res.render('productslist', { products: productos, productsExist: true });
+  }
+  else{
+    res.render('sinproductos');
+  }
 });
 const contenedor = new Contenedor();
 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form
+      action="/form"
+      method="POST"
+      class="d-flex justify-content-center align-items-center flex-column"
+      style="height: 100vh"
+    >
+
+        <div class="mb-3">
+          <input type="text" 
+          id="exampleFormControlInput1" 
+          placeholder="Producto"
+          name="titulo">
+        </div>
+
+
+      <div class="mb-3">
+        <input 
+          type="text" 
+          id="exampleFormControlInput1" 
+          placeholder="Precio"
+          name="precio">
+      </div>
+      <div class="mb-3">
+        <input type="text" 
+          id="exampleFormControlInput1" 
+          placeholder="URL de imagen"
+          name="thumbnail">
+      </div>
+      <button type="submit" class="btn btn-secondary">Subir producto</button>
+    </form>
+</body>
+</html>

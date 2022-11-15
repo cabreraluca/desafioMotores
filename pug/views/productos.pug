@@ -1,0 +1,32 @@
+html 
+    head 
+        title="Document"
+        style 
+            include style.css 
+    body 
+        div(class="navbar")
+            ul 
+                li 
+                    a(href="/")='INICIO'
+                    a(href="/productos")=' PRODUCTOS'
+        h1='Vista de Productos'
+        if productsExist
+            for item in productos 
+                table 
+                    tbody 
+                        tr 
+                            th='Nombre'
+                            th='Precio'
+                            th='Foto'
+                        tr 
+                            td 
+                                strong=item.titulo 
+                            td=item.precio 
+                            td 
+                                img(src=item.thumbnail) 
+            a(href="/")='Agregar mas productos'                    
+        else 
+            h2='No hay Productos'       
+        footer 
+            p 
+            strong='Autor: Luca Cabrera'

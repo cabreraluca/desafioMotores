@@ -1,0 +1,24 @@
+html 
+    head 
+        title="Document"
+        style 
+            include style.css 
+    body 
+        div(class="navbar")
+            ul 
+                li 
+                    a(href="/")='INICIO'
+                    a(href="/productos")=' PRODUCTOS'
+        h1='Ingrese un Producto'   
+        div(class="container")    
+            form(method="POST" action="productos" class="formulario") 
+                label='Producto'
+                input(type="text"  name="titulo")
+                label='Precio'
+                input(type="number"  name="precio")
+                label='Thumbnail'
+                input(type="text" name="thumbnail")
+                input(type="submit" value="Agregar" class="button")
+        footer 
+            p 
+            strong='Autor: Luca Cabrera'
